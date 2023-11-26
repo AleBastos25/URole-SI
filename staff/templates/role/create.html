@@ -1,0 +1,40 @@
+{% extends '../base.html' %}
+{% load static %}
+{% load utils %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title> Criar rolê </title>
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1 class="mt-4">Movies</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/staff/">Rolês</a></li>
+</ol>
+
+<div class="card mb-4">
+  <div class="card-header">
+      <h2 class="my-2">Adicionar rolê</h2>
+  </div>
+  <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+              {{form|crispy}}
+              <button class="btn btn-primary my-4" type="submit">Submeter</button>
+        </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% comment %} 
+{% block footer %}
+
+{% endblock %} {% endcomment %}

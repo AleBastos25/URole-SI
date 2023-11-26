@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load utils %}
+
+<!-- Header -->
+{% block title %}
+        <title>{{ role.name }} </title>
+        
+        <style>
+          .results{
+            font-family: 'Lato', sans-serif;
+          }
+          .norounds{
+            border-radius:0px;
+          }
+          .imagestyle{
+            box-shadow: 0 4px 8px 0 rgba(185,65,223, 88%), 0 6px 20px 0 rgba(4,47,243,99%);
+          }
+        </style>
+        
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container" id="movie-content">        
+        
+        <div class="row">
+            
+            <div id="movie-poster" class="col-md-4 d-flex justify-content-center ">
+                <div class="card text-center border-0 bgdark" style="width: 18rem;">
+                    <img class="card-img-top imagestyle " src="{{ role.banner_url }}" alt="Card image cap">
+                    <div class="card-body">
+                    <a href="/ticket_selection/{{role.id}}" class="btn btn-warning">Comprar</a>
+                    </div>
+                </div>
+                    
+            </div>
+            
+            <div id="movie-info" class="col-md-8 " data-movie-id="46306">
+
+                <h1>{{ role.name }}</h1>
+                <h2>{{ role.date }}</h2>
+                <p>{{ role.about }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+        
+
+

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load utils %}
+
+<!-- Header -->
+{% block title %}
+        <title>Compre um ingresso</title>
+        <link rel="stylesheet" href="{% static 'css/seat_selection2.css' %}">
+        
+        <style>
+          .results{
+            font-family: 'Lato', sans-serif;
+          }
+          .norounds{
+            border-radius:0px;
+          }
+          .modal-content{
+            background-color:black;
+            color:white;
+          }
+          .sbodymodal{
+            background-color:black;
+          }
+          .datebox{
+            background-color:#000814;
+            color:white;
+            border-color:grey;
+          }
+        </style>
+        
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row"> 
+        {% if tickets %}
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for ticket in tickets %}
+                <div class="col-md-4">
+                    <p>{{ ticket.type }}: R${{ ticket.price }}</p>
+                </div>
+            {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <h2> Não há nenhum ingresso à venda no momento</h2>
+          <h5> volte mais tarde . . . </h5>
+        {% endif %}
+      </div>
+</div>
+{% endblock content %}
