@@ -13,8 +13,8 @@
 
 <h1 class="mt-4">Show</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="/organizer">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="/organizer/shows">Shows</a></li>
+    <li class="breadcrumb-item"><a href="/staff">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/staff/shows">Shows</a></li>
     <li class="breadcrumb-item active">Delete Show</li>
 </ol>
 
@@ -43,7 +43,7 @@
               <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <button class="btn btn-danger my-4" type="submit">Comfirm Delete</button>
-                <a class="btn btn-primary my-4" href="/organizer/movies" >Go Back</a>
+                <a class="btn btn-primary my-4" href="/staff/movies" >Go Back</a>
               </form>
             </div>
           </div>

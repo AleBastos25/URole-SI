@@ -1,1 +1,1 @@
-from roles.models import Role, Ticket
+from roles.models import *

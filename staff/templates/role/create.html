@@ -11,14 +11,10 @@
 
 {% block content %}
 
-<h1 class="mt-4">Movies</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="/staff/">Rolês</a></li>
-</ol>
 
 <div class="card mb-4">
   <div class="card-header">
-      <h2 class="my-2">Adicionar rolê</h2>
+      <h1 class="my-2">Adicionar rolê</h1>
   </div>
   <div class="card-body">
         <form method="post" enctype="multipart/form-data">
@@ -26,8 +22,6 @@
               {{form|crispy}}
               <button class="btn btn-primary my-4" type="submit">Submeter</button>
         </form>
-
-
   </div>
 </div>
 

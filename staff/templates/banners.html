@@ -12,9 +12,9 @@
 
 <h1 class="mt-4">Banners</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="/organizer">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/staff">Dashboard</a></li>
     <li class="breadcrumb-item active">Banners</li>
-    <li class="breadcrumb-item"><a href="/organizer/addbanner">Add Banner</a></li>
+    <li class="breadcrumb-item"><a href="/staff/addbanner">Add Banner</a></li>
 </ol>
 
 <div class="card mb-4">
@@ -49,10 +49,10 @@
                   <td>{{ banner.modified|tdiff }}</td>
                   <td>
                       <a class="btn btn-primary" href="/" target="_blank" >Preview</a>
-                      <a class="btn btn-warning" href="/organizer/editbanner/{{ banner.id }}">Edit</a>
+                      <a class="btn btn-warning" href="/staff/editbanner/{{ banner.id }}">Edit</a>
                       {% comment %} <a href="#">delete</a> {% endcomment %}
                       <!-- Button trigger modal -->
-                      <a class="btn btn-danger" data-id="{{ banner.id }}" href="/organizer/deletebanner/{{ banner.id }}">Delete</a>
+                      <a class="btn btn-danger" data-id="{{ banner.id }}" href="/staff/deletebanner/{{ banner.id }}">Delete</a>
                   </td>
                 </tr>
             {% endfor %}

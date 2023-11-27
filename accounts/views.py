@@ -47,7 +47,7 @@ def user_login(request):
             if user is not None and user.is_staff:
             # if user is not None and user.role==1:
                 login(request, user)
-                return redirect('/organizer')
+                return redirect('/staff')
             # elif user is not None and user.is_customer:
             elif user is not None and not user.is_staff:
             # elif user is not None and user.role==0:
@@ -63,10 +63,10 @@ def user_login(request):
 
     return render(request, 'user_signin.html', {'form': form, 'msg': msg})
 
-def organizer_login(request):
+def staff_login(request):
     if request.user.is_authenticated and request.user.is_staff:
         # return render(request, 'account_index.html')
-        return redirect('/organizer')
+        return redirect('/staff')
     form = LoginForm(request.POST or None)
     msg = None
     if request.method == 'POST':
@@ -78,7 +78,7 @@ def organizer_login(request):
             if user is not None and user.is_staff:
             # if user is not None and user.role==1:
                 login(request, user)
-                return redirect('/organizerizer')
+                return redirect('/staffizer')
             # elif user is not None and user.is_customer:
             elif user is not None and not user.is_staff:
             # elif user is not None and user.role==0:
@@ -92,12 +92,12 @@ def organizer_login(request):
         else:
             msg = 'error validating form'
 
-    return render(request, 'organizer_login.html', {'form': form, 'msg': msg})
+    return render(request, 'staff_login.html', {'form': form, 'msg': msg})
     # return render(request,)
 
-@user_passes_test(staff_required, login_url='/organizerlogin')
-def organizer(request):
-    return render(request,'organizer.html')
+@user_passes_test(staff_required, login_url='/stafflogin')
+def staff(request):
+    return render(request,'staff.html')
 
 @login_required(login_url='/login')
 def customer(request):
@@ -106,7 +106,7 @@ def customer(request):
 
 def signout(request):
     if request.user.is_staff:
-        url = "/organizer"
+        url = "/staff"
     else:
         url = "/"
     logout(request)

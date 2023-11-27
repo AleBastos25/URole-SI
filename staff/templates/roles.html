@@ -12,9 +12,6 @@
 {% block content %}
 
 <h1 class="mt-4">Rolês</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="/staff/create_role">Criar rolê</a></li>
-</ol>
 
 <div class="card mb-4">
   <div class="card-header">
@@ -32,31 +29,25 @@
                   <th>Horário de início</th>
                   <th>Horário de fim</th>
                   <th>Lugar</th>
-                  <th>Endereço</th>
-                  <th>URL do banner</th>
                   <th>Categorias</th>
-                  <th>Descrição</th>
               </tr>
           </thead>
           <tbody>
 
             {% for role in role_list %}
-                <tr>'name', 'role_date', 'role_start_time', 'role_end_time', 'location', 'address', 'banner_url', 'category', 'about'
-                  <td >{{ role.name }}</td>
-                  <td >{{ role.role_start_time }}</td>
-                  <td >{{ role.role_end_time }}</td>
-                  <td >{{ role.location }}</td>
-                  <td >{{ role.address }}</td>
-                  <td >{{ role.banner_url }}</td>
-                  <td >{{ role.category }}</td>
-                  <td >{{ role.about }}</td>
-                  <td style="padding:5px" ><img src="{{ role.banner_url }}"  style="height:50px;width:40px;"></td>
-                  <td>{{ role.date }}</td>
-                  <td>
-                      <a class="btn btn-primary" href="/detail/{{ role.id }}" target="_blank" >Preview</a>
-                      <a class="btn btn-warning" href="/organizer/update_role/{{ role.id }}">Edit</a>
-                      <a class="btn btn-danger" data-id="{{ role.id }}" href="/organizer/delete_role/{{ role.id }}">Delete</a>
-                  </td>
+                <tr>
+                    <td style="padding:5px" ><img src="{{ role.banner_url }}"  style="height:40px;width:40px;"></td>
+                    <td >{{ role.name }}</td>
+                    <td>{{ role.date }}</td>
+                    <td >{{ role.role_start_time }}</td>
+                    <td >{{ role.role_end_time }}</td>
+                    <td >{{ role.location }}</td>
+                    <td >{{ role.category }}</td>
+                    
+                    <td>
+                        <a class="btn btn-primary" href="/detail/{{ role.id }}" target="_blank" >Preview</a>
+                        <a class="btn btn-warning" href="/staff/update_role/{{ role.id }}">Edit</a>
+                    </td>
                 </tr>
             {% endfor %}
           </tbody>
