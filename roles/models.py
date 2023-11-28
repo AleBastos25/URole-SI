@@ -60,5 +60,5 @@ class Ticket(BaseTrackingModel):
     role = models.ForeignKey(Role, null=True, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.role.name+" - "+self.type
+        return " - "+self.type
     

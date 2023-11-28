@@ -6,7 +6,6 @@ from .models import *
 
 def home(request):
     roles = Role.objects.filter().values_list('id','name', 'banner_url', named=True)
-    print(roles)
     return render(request,"index.html", context={'roles': roles})
 
 def role_detail(request,id):

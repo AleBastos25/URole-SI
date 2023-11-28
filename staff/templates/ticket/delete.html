@@ -1,4 +1,4 @@
-{% extends '../.html' %}
+{% extends '../base.html' %}
 {% load static %}
 {% load utils %}
 {% load crispy_forms_tags %}
@@ -11,39 +11,23 @@
 
 {% block content %}
 
-<h1 class="mt-4">Show</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="/staff">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="/staff/shows">Shows</a></li>
-    <li class="breadcrumb-item active">Delete Show</li>
-</ol>
-
 <div class="card mb-4">
   <div class="card-header">
-      <h2 class="my-2">Delete Show</h2>
+      <h2 class="my-2">Deletar Ingresso</h2>
   </div>
   <div class="card-body">
-        <!--Django Model Form-->
       <div class="container">
           <div class="row justify-content-md-center">
-              <div class="col-md-auto">
-                  <img class="card-img-top" src="{{ object.movie.url }} " style="width: 18rem;">
-              </div>
               <div class="col">
-                  <p> Film Name : {{ object.movie }}</p>
-                  <p> Year: {{ object.movie.movie_year }} </p>
-                  <p> Start Date: {{ object.start_date }} </p>
-                  <p> End Date: {{ object.end_date }} </p>
-                  <p> Price: {{ object.price }} </p>
-                  <p> Showtime: {{ object.showtime }} </p>
+                  <p> Nome do Ingresso : {{ object.type }}</p>
               </div>
           </div>
           <div class="row">
             <div class="col">
               <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <button class="btn btn-danger my-4" type="submit">Comfirm Delete</button>
-                <a class="btn btn-primary my-4" href="/staff/movies" >Go Back</a>
+                <button class="btn btn-danger my-4" type="submit">Comfirmar</button>
+                <a class="btn btn-primary my-4" href="/staff/tickets/{{object.role.id}}">Voltar</a>
               </form>
             </div>
           </div>

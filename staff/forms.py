@@ -28,7 +28,6 @@ class roleForm(forms.ModelForm):
                 'role_start_time':forms.TimeInput(attrs={'type': 'time'}),
                 'role_end_time':forms.TimeInput(attrs={'type': 'time'}),
             }
-    print(Category.CATEGORIAS)    
 
     def __str__(self):
         return self.name
@@ -41,7 +40,7 @@ class ticketForm(forms.ModelForm):
         fields = ('type', 'price')
         labels = {
             'type':'Nome do ingresso',
-            'price':'preço'
+            'price':'preço',
         }
     def __str__(self):
         return self.movie_name
